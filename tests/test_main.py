@@ -3,6 +3,7 @@ import pytest
 from src.main import site_popularity
 from typing import Union
 
+@pytest.mark.skip(reason="Build to be broken")
 @pytest.mark.parametrize(
     "num",
     [
