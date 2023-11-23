@@ -1,4 +1,3 @@
-from typing import Union
 from src.graphica.Circle import Circle
 from tkinter import Canvas
 
@@ -14,7 +13,15 @@ class TestCircle:
         canvas = Canvas()
         circle.set_canvas(canvas)
         assert circle.canvas_is(canvas)
+        canvas2 = Canvas()
+        circle.set_canvas(canvas2)
+        assert circle.canvas_is(canvas2)
+        assert circle.canvas_is_not(canvas)
+
 
 class CircleImitation(Circle):
-    def canvas_is(self, canvas: Union [Canvas, None]):
+    def canvas_is(self, canvas: Canvas):
         return self._canvas == canvas
+    
+    def canvas_is_not(self, canvas: Canvas):
+        return self._canvas != canvas
