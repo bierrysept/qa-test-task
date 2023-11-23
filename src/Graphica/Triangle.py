@@ -1,4 +1,4 @@
-from src.graphica.IPrimitive import IPrimitive
+from graphica.IPrimitive import IPrimitive
 
 class Triangle(IPrimitive):
     x1:int
@@ -16,7 +16,7 @@ class Triangle(IPrimitive):
         self.y3 = y3
 
     def print(self):
-        pass #print(f"Drawing Circle: ({self.x1}, {self.y1}) with radius {self.radius}")
+        print(f"Drawing Triangle: ({self.x1}, {self.y1}) - ({self.x2}, {self.y2}) - ({self.x3}, {self.y3})")
         
-    def draw_myself(self):
-        pass
+    def draw_myself(self, color: str):
+        self._canvas.create_polygon(self.x1, self.y1, self.x2, self.y2, self.x3, self.y3, fill="white", outline=color)

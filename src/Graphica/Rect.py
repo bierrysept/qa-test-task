@@ -1,4 +1,4 @@
-from src.graphica.IPrimitive import IPrimitive
+from graphica.IPrimitive import IPrimitive
 
 class Rect(IPrimitive): 
     x:int 
@@ -13,7 +13,7 @@ class Rect(IPrimitive):
         self.height = height
 
     def print(self):
-        print(f"Drawing rectangle: ({self.x}, {self.y}) with width {self.width} and height {self.height}")
+        print(f"Drawing Rectangle: ({self.x}, {self.y}) with width {self.width} and height {self.height}")
         
-    def draw_myself(self):
-        pass
+    def draw_myself(self, color: str):
+        self._canvas.create_rectangle(self.x, self.y, self.x+self.width, self.y+self.height, fill="white", outline=color)

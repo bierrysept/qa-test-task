@@ -1,9 +1,13 @@
 from abc import ABC, abstractmethod
+from tkinter import Canvas
 
 class IPrimitive(ABC):
 
-    def draw(self):
-        self.draw_myself()
+    def set_canvas(self, canvas: Canvas):
+        self._canvas = canvas
+
+    def draw(self, color: str):
+        self.draw_myself(color)
         self.print()
 
     @abstractmethod
@@ -11,5 +15,5 @@ class IPrimitive(ABC):
         print("Drawing Figure: (Actually this is abstraction)")
 
     @abstractmethod
-    def draw_myself(self):
+    def draw_myself(self, color: str):
         pass
