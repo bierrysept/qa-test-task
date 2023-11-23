@@ -7,6 +7,3 @@ class TestRect:
         assert rect.y == 10
         assert rect.width == 20
         assert rect.height == 20
-
-class RectImitation(Rect):
-    pass

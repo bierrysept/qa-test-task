@@ -9,6 +9,3 @@ class TestTriangle:
         assert triangle.y1 == 10
         assert triangle.y2 == 20
         assert triangle.y3 == 20
-
-class TriangleImitation(Triangle):
-    pass
